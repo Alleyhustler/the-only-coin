@@ -63,6 +63,12 @@
             text-align: center;
             transition: opacity 0.5s ease;
         }
+                #sigil-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
         
         #sigil {
             width: 120px;
@@ -71,9 +77,29 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0;
+            opacity: 0.7;
+            cursor: pointer;
     animation: fadeIn 0.5s ease-in-out forwards; /* Removed the delay completely */
             cursor: pointer;
+        }
+
+                #sigil-subtitle {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            text-align: center;
+            max-width: 300px;
+            line-height: 1.4;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        #sigil:hover + #sigil-subtitle,
+        #sigil-subtitle:hover {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
         
         @keyframes fadeIn {
@@ -233,7 +259,10 @@
 
     <!-- Monument View -->
     <div id="monument">
-        <div id="sigil"></div>
+        <div id="sigil-container">
+            <div id="sigil"></div>
+            <div id="sigil-subtitle">THE ONLY COIN </div>
+        </div>
     </div>
     
     <!-- Revelation Panel -->
